@@ -21,6 +21,8 @@ Salesperson.destroy_all
 
 # 2. insert 1-2 rows in salespeople table.
 
+puts "Salespeople: #{Salesperson.all.count}"
+
 new_salesperson = Salesperson.new
 new_salesperson ["first_name"] = "John"
 new_salesperson ["last_name"] = "Cupertino"
@@ -58,3 +60,12 @@ puts carol.inspect
 # Salespeople: 2
 # Ben Block
 # Brian Eng
+
+people = Salesperson.all
+for giraffe in people
+    first_name = giraffe["first_name"]
+    last_name = giraffe["last_name"]
+    name = "#{first_name} #{last_name}"
+    puts name
+end
+

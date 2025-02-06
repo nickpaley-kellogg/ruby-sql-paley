@@ -31,7 +31,7 @@ puts "There are #{Company.all.count} companies"
 
 new_company = Company.new
 new_company ["name"] = "Amazon"
-new_company ["city"] = "Seattl"
+new_company ["city"] = "Seattle"
 new_company ["state"] = "WA"
 new_company.save
 puts new_company.inspect
@@ -60,8 +60,22 @@ apple = Company.where ({"name" => "Apple"})[0]
 apple = Company.find_by ({"name" => "Apple"})
 puts apple.inspect
 
+# use the find.by method
+
 # 5. read a row's column value
+
+puts apple["url"]
 
 # 6. update a row's column value
 
+amazon = Company.find_by ({"name" => "Amazon"})
+puts amazon.inspect
+amazon["url"] = "https://amazon.com"
+amazon.save
+puts amazon.inspect
+
 # 7. delete a row
+
+google = Company.where ({"name" => "Google"})[0]
+puts google.inspect
+google.destroy
